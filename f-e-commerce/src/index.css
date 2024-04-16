@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+.shader{
+    background: linear-gradient(to right bottom, #69628a, #040309);
+}
+
+.hidescroll::-webkit-scrollbar{
+    display: none;
+}
+@tailwind utilities;
