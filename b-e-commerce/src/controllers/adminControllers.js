@@ -17,7 +17,18 @@ try {
 
 const allProducts = async (req , res)=>{
     try {
-        const data = await productModel.find();
+        const {categories,name}=req.query;
+        const queryObject = {};
+        console.log(categories,name);
+        if (categories) {
+            queryObject.pCategories = categories;
+        }
+
+        if (name) {
+            queryObject.pName = {$regex:name,$options:"i"};
+        }
+
+        const data = await productModel.find(queryObject);
         res.status(200).json(data);
     } catch (error) {
         console.log(error);
