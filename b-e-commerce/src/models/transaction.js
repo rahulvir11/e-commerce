@@ -36,10 +36,7 @@ const transactionSchema = new mongoose.Schema({
     timestamp: {
         type: Date,
     },
-    address: {
-        type: String,
-        required: true
-    },orderProductIds:[{
+    orderProductIds:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: "OrderedProduct",
     }]

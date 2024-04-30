@@ -25,16 +25,20 @@ const orderedSchema = new mongoose.Schema(
     },
     quantity: {
       type: Number,
-      required: [true, "Quantity is not received"],
+      required: [true, {message:"Quantity is not received"}],
       min: [1, "Quantity must be at least 1"], // Ensure quantity is positive
     },
     discount: {
       type: Number,
-      required: [true, "Discount is not received"],
+      required: [true, {message:"Discount is not received"}],
     },
     tax: {
       type: Number,
-      required: [true, "Tax is not received"],
+      required: [true, {message:"Tax is not received"}],
+    },
+    address:{
+    type:String,
+    required:[true,{message:"address is not received"}]
     },
   },
   {

@@ -76,7 +76,7 @@ const userState = ({ children }) => {
     // get login user 
     const getUser = async () => {
       try {
-        console.log(authToken);
+        // console.log(authToken);
         if (authToken !== null) {
           const response = await fetch("http://localhost:3000/api/v1/getuser", {
             method: "GET",
@@ -93,7 +93,7 @@ const userState = ({ children }) => {
           const data = await response.json();
           
           if (response.ok) {
-            console.log(data);
+            // console.log(data);
             setUser(data);
             setCart(data.addCart);
             getMyOrder();

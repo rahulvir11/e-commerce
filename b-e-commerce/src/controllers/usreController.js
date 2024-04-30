@@ -150,7 +150,6 @@ const savetransaction = async (req, res) => {
       currency: order.currency,
       status: "success",
       userId: User._id,
-      address: ` ${address.homeNo} ${address.pinCode} ${address.subdistrict} ${address.district} ${address.state}  ${address.country}`,
     });
 
     if (saveTransaction._id) {
@@ -164,6 +163,7 @@ const savetransaction = async (req, res) => {
           quantity: obj.quantity,
           discount: obj.discount,
           tax: obj.tax,
+          address: ` ${address.homeNo} ${address.pinCode} ${address.subdistrict} ${address.district} ${address.state}  ${address.country}`,
         }).save();
         return savedProduct._id; // Return the ID of the saved product
       }));

@@ -7,6 +7,7 @@ import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
 import { BarChart, DoughnutChart } from "../../Components/admin/Chart";
 import Table from "../../Components/admin/Table";
 import { Data ,transaction} from "../../Components/admin/Data";
+import { NavLink } from "react-router-dom";
 const Dashboard = () => {
   const columns = [
     {
@@ -48,11 +49,11 @@ const Dashboard = () => {
             <div className="w-fit flex items-center">
               <FaRegBell />
               <div className="relative size-6 rounded-md overflow-hidden bg-slate-600 mx-3  ">
-                <img
+                <NavLink to="/profile"> <img
                   className="w-full  object-cover"
                   src="https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?w=740&t=st=1706871902~exp=1706872502~hmac=70912a955862e2db10781df67cbdd39134411be0b37e5699a03a68ea7c74d231"
                   alt=""
-                />
+                /></NavLink>
               </div>
             </div>
           </nav>

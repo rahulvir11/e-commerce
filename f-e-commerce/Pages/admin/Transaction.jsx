@@ -32,9 +32,7 @@ const Transaction = () => {
     accessor: "orderProductIds[0]._id",
     }
   ];
-  useEffect(()=>{
-    console.log(trans);
-  },[])
+  
   return (
     <>
     <div className="relative w-screen h-screen bg-zinc-200 flex">

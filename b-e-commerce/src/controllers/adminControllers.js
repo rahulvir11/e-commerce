@@ -19,7 +19,7 @@ const allProducts = async (req , res)=>{
     try {
         const {categories,name}=req.query;
         const queryObject = {};
-        console.log(categories,name);
+        // console.log(categories,name);
         if (categories) {
             queryObject.pCategories = categories;
         }

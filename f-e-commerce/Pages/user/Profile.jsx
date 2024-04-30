@@ -4,7 +4,13 @@ import Footer from "../../Components/users/Footer";
 import UserContext from "../../src/context/user/UserContex";
 
 const Profile = () => {
-  const { User } = useContext(UserContext);
+  const { User ,getUser} = useContext(UserContext);
+  useEffect(()=>{
+    const isEmpty = (obj) => Object.keys(obj).length === 0;
+    if (isEmpty(User)) {
+      getUser();
+    }
+  },[])
   return (
     <div>
       <Navbar />

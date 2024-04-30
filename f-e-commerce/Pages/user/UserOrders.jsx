@@ -6,7 +6,7 @@ import Table from "../../Components/admin/Table";
 const UserOrders = () => {
   const {User ,setShowOrderPage,getUser,myorders}= useContext(UserContext);
 useEffect(()=>{
-  console.log(myorders);
+  // console.log(myorders);
   setShowOrderPage(false);
   const isEmpty = obj => Object.keys(obj).length === 0;
   if (isEmpty(User)) {
