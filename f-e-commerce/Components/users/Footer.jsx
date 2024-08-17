@@ -10,7 +10,7 @@ const Footer = () => {
             </div>
             <NavLink to={"/order"} >
             <i
-                className="text-xl absolute shader top-0 left-1/2 -translate-y-1/3 -translate-x-1/2 flex items-center justify-center rounded-full shadow-xl shadow-black/30 w-[4rem] h-[4rem] ri-shopping-bag-fill text-yellow-400"></i>
+                className="text-xl absolute shader top-0 left-1/2 -translate-y-1/4 -translate-x-1/2 flex items-center justify-center rounded-full shadow-xl shadow-black/30 w-[3rem] h-[3rem] ri-shopping-bag-fill text-yellow-400"></i>
             </NavLink>
             
             <div className="flex gap-10">

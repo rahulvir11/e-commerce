@@ -130,7 +130,7 @@ const Login = () => {
                 value={"submit"}
                 onClick={handlSubmit}
               >
-                login
+                Login
               </button>
               <button
                 type="submit"
