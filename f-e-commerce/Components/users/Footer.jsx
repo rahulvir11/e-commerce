@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 const Footer = () => {
   return (
     <div>
-      <div className="footer flex items-center justify-between px-10 fixed bottom-0 left-0 w-full py-2 bg-slate-300">
+      <div className="footer flex items-center justify-between px-10 fixed bottom-0 left-0 w-full py-1 bg-slate-300">
             <div className="flex gap-10">
              <NavLink to={"/"}> <i className="text-xl text-[#69628a] ri-home-2-fill"></i></NavLink>
                 <i className="text-xl opacity-20 ri-heart-fill"></i>

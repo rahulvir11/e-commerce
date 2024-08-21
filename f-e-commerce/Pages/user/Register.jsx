@@ -1,5 +1,6 @@
 import React,{ useState} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Register = () => {
 
@@ -45,8 +46,10 @@ const Register = () => {
           cpassword: "",
         });
         navigate("/login");
+        toast.success("sign-up successfull");
+        
       } else {
-        console.log(data);
+        toast.error(data.message)
       }
     } catch (error) {
       console.log("internal server error",error);

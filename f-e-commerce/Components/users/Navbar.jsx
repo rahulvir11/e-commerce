@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className=" w-screen h-[10vh] flex items-center justify-between gap-4 px-[2%] py-[2.5%] bg-white "
+      <div className=" w-full h-[10vh] flex items-center justify-between gap-4 px-[2%] py-[2.5%] bg-white "
       style={{'backgroundColor': '#FA8BFF',
         'backgroundImage': 'linear-gradient(243deg, #fff 20%, #2BD2FF 90%, #2BFF88 0%)'
         }}

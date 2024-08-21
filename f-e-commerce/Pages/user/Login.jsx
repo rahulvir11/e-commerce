@@ -1,6 +1,7 @@
 import React,{useContext, useEffect, useState} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import UserContext from "../../src/context/user/UserContex";
+import { toast } from "react-toastify";
 const Login = () => {
   const {getUser,setToken}=useContext(UserContext);
   const navigate = useNavigate();
@@ -36,9 +37,10 @@ const Login = () => {
         console.log('login successfull');
         getUser();
         navigate("/");
+        toast.success("login successfull")
 
       }else{
-        console.log('invalid credential');
+        toast.error('invalid credential');
       }
     } catch (error) {
       console.log("internal server error",error);

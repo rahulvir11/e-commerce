@@ -29,6 +29,9 @@ import Profile from '../Pages/user/Profile';
 import Shipping from '../Pages/user/Shipping';
 import Protected from '../Components/users/Procted';
 import Vieworder from '../Pages/user/Vieworder';
+import Productspage from '../Pages/user/Productspage';
+import { ToastContainer } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -41,6 +44,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Productspage />} />
                <Route element={<Protected/>}>
                       <Route path="/logout" element={<Logout />} />
                       <Route path="/order" element={<UserOrders />} />
@@ -72,8 +76,12 @@ function App() {
               <Route path="/admin/product/new" element={<NewProduct />} />
               <Route path="/admin/product/manage/:id" element={<ProductManagement />} />
               <Route path="/admin/transaction/:id" element={<TransactionManagement />} />
+               {/* Catch-all route */}
+            <Route path="*" element={<Navigate to="/error" />} />
             </Routes>
+            <ToastContainer/>
           </Suspense>
+         
         </Router>
       </UserState>
     </>
