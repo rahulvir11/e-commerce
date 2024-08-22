@@ -62,6 +62,7 @@ const columns = [
       <div >
         <Navbar  />
           {/* items */}
+          <h1 className="text-2xl font-bold pl-10">orders items</h1>
           <div className="px-7">
           {myorders.length >0 ? <Table columns={columns} data={myorders} />: <h1>no order</h1>}
           </div>

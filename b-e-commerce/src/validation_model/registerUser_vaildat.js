@@ -33,13 +33,13 @@ const singupSchema = z.object({
 
 const validateSignup  = async (req, res, next) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
       const data = await singupSchema.parseAsync(req.body);
       req.body = data;
       next();
   } catch (err) {
     console.log(err);
-    res.status(400).json({ error: err.errors[0].message });
+    res.status(400).json({ message: err.errors[0].message });
   }
 }
 

@@ -42,7 +42,7 @@ const Vieworder = () => {
       <div className="w-full h-full flex px-10 py-5">
       <div className="right w-1/2 h-full ">
         <div className=" mt-5">
-          <h2 className="text-[1.5vw] uppercase">product details</h2>
+          <h2 className="text-[1.5vw] uppercase pb-5 underline underline-offset-4 text-blue-400">order product details</h2>
           <h3>name : {data?.productId?.pName}</h3>
           <h3>quentity : {data?.quantity}</h3>
           <h3>description : {data?.productId?.pDescription}</h3>

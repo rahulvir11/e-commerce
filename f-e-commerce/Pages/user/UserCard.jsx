@@ -21,7 +21,7 @@ const UserCard = () => {
       <div>
         <Navbar />
         <h1 className="text-lg font-semibold w-full pl-5">
-          {cart.length > 0 ? "your select product" : "please add item in cart"}
+          {cart.length > 0 ? "your selected products" : "please add item in cart"}
         </h1>
         <div className="w-screen  flex flex-col md:flex-row md:px-[2%] ">
           {/* items */}
