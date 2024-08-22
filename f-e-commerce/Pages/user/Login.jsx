@@ -2,6 +2,7 @@ import React,{useContext, useEffect, useState} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import UserContext from "../../src/context/user/UserContex";
 import { toast } from "react-toastify";
+const API= import.meta.env.VITE_APP_URL_API;
 const Login = () => {
   const {getUser,setToken}=useContext(UserContext);
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Login = () => {
   const handlSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/api/v1/login',{
+      const response = await fetch(`${API}/api/v1/login`,{
         method:"POST",
         headers:{
           "Content-Type":"application/json"

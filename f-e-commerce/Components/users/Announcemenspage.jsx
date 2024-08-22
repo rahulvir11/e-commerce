@@ -114,18 +114,22 @@ const Announcemenspage = () => {
 
   return (
     <div>
-      <div ref={constainer} className=" w-full h-[50vh] md:h-[84vh] relative bg-[url('slider-bg.jpg')] bg-cover bg-no-repeat overflow-hidden">
+      <div ref={constainer} className=" w-full h-[40vh] md:h-[84vh] relative overflow-hidden " style={{
+        backgroundImage:"url(slider-bg.jpg)",
+        backgroundPosition:"top",
+        backgroundSize:"cover"
+      }}>
         {announcements.map((announcement, index) => (
           <div
             key={announcement.id}
             className={`box${
               index + 1
-            } absolute w-[90%] md:w-[60%] lg:w-[40%] h-3/4 left-[5%] md:left-[11%] top-14 leading-none`}
+            } absolute w-[90%] md:w-[60%] lg:w-[40%] h-3/4 left-[5%] md:left-[11%] top-16 leading-none`}
           >
-            <h2 className="text-[8vw] md:text-[6vw] lg:text-[5vw] text-red-500 text-left font-['FontAwesome'] font-semibold w-full overflow-hidden">
+            <h2 className="text-[8vw] md:text-[6vw] lg:text-[5vw] text-red-500 text-left font-['FontAwesome'] font-semibold w-full ">
               {announcement.heading}
             </h2>
-            <h2 className="text-[8.5vw] md:text-[6.5vw] lg:text-[5.2vw] font-['FontAwesome'] font-semibold w-full overflow-hidden">
+            <h2 className="text-[8.5vw] md:text-[6.5vw] lg:text-[5.2vw] font-['FontAwesome'] font-semibold w-full ">
               {announcement.subheading}
             </h2>
             <p className="p-2 mt-4 font-sans tracking-widest text-[3vw] md:text-[2vw] lg:text-[1.1vw] leading-5 w-full overflow-hidden">
@@ -137,7 +141,7 @@ const Announcemenspage = () => {
           </div>
         ))}
 
-        <div className="absolute bottom-10 left-[10%] md:left-[18%] lg:left-[23%] flex gap-3">
+        <div className="absolute bottom-5 left-[30%] md:left-[18%] lg:left-[23%] flex gap-3">
           <li className={"list1 size-3 rounded-full bg-white list-none"}></li>
           <li className={"list2 size-3 rounded-full bg-white list-none"}></li>
           <li className={"list3 size-3 rounded-full bg-white list-none"}></li>

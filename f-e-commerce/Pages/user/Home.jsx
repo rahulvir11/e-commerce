@@ -20,7 +20,7 @@ const Home = () => {
     if (allProduct.length === 0) {
       getAllproduct()
         .then((data) => {
-          // console.log(data);
+          console.log(data);
           if (data === undefined) {
             setAllproduct([]);
           } else {

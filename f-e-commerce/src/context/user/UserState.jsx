@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import UserContext from "./UserContex";
+  const API= import.meta.env.VITE_APP_URL_API;
+
 const userState = ({ children }) => {
+  console.log(API);
   const [authToken, setToken] = useState(localStorage.getItem("rswsit"));
   const [User, setUser] = useState({});
   const [cart, setCart] = useState([]);
@@ -15,7 +18,7 @@ const userState = ({ children }) => {
     // get all product from database
     const getAllproduct = async ()=>{
       try {
-        const response = await fetch('http://localhost:3000/api/v1/admin/allproducts',{
+        const response = await fetch(`${API}/api/v1/admin/allproducts`,{
           method:"GET",
           headers:{
             "Content-Type":"application/json"
@@ -35,7 +38,7 @@ const userState = ({ children }) => {
     }
     const getAlltransaction = async ()=>{
       try {
-        const response = await fetch('http://localhost:3000/api/v1/admin/alltransaction',{
+        const response = await fetch(`${API}/api/v1/admin/alltransaction`,{
           method:"GET",
           headers:{
             "Content-Type":"application/json"
@@ -55,7 +58,7 @@ const userState = ({ children }) => {
     }
     const getAlluser = async ()=>{
       try {
-        const response = await fetch('http://localhost:3000/api/v1/admin/alluser',{
+        const response = await fetch(`${API}/api/v1/admin/alluser`,{
           method:"GET",
           headers:{
             "Content-Type":"application/json"
@@ -63,6 +66,7 @@ const userState = ({ children }) => {
         });
   
         const data = await response.json();
+        console.log(await data);
         if(response.ok){
           return data;
   
@@ -78,7 +82,7 @@ const userState = ({ children }) => {
       try {
         // console.log(authToken);
         if (authToken !== null) {
-          const response = await fetch("http://localhost:3000/api/v1/getuser", {
+          const response = await fetch(`${API}/api/v1/getuser`, {
             method: "GET",
             headers: {
               "Content-Type":"application/json",
@@ -112,7 +116,7 @@ const userState = ({ children }) => {
     const getMyOrder = async () => {
       try {
         if (authToken !== null) {
-          const response = await fetch("http://localhost:3000/api/v1/myorders", {
+          const response = await fetch(`${API}/api/v1/myorders`, {
             method: "GET",
             headers: {
               "Content-Type":"application/json",
@@ -143,7 +147,7 @@ const userState = ({ children }) => {
     // logout
     const logoutUser = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/v1/logout", {
+        const response = await fetch(`${API}/api/v1/logout`, {
           method: "POST",
           headers: {
             AuthToken: authToken,
@@ -165,7 +169,7 @@ const userState = ({ children }) => {
     const addItem = async (id)=>{
       try {
         
-        const response = await fetch("http://localhost:3000/api/v1/addcart", {
+        const response = await fetch(`${API}/api/v1/addcart`, {
           method: "PUT",
           headers: {
             "Content-Type":"application/json",
@@ -187,7 +191,7 @@ const userState = ({ children }) => {
     const orderandsave = async (address)=>{
       try {
         // console.log(buymultiple);
-        const response = await fetch("http://localhost:3000/api/v1/createorder", {
+        const response = await fetch(`${API}/api/v1/createorder`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -210,7 +214,7 @@ const userState = ({ children }) => {
                     alert("This step of Payment Succeeded");
                     // Save transaction and product info in the database
                     try {
-                        const saveResponse = await fetch("http://localhost:3000/api/v1/savetransaction", {
+                        const saveResponse = await fetch(`${API}/api/v1/savetransaction`, {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",

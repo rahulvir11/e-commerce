@@ -1,7 +1,7 @@
 import React,{ useState} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
+const API= import.meta.env.VITE_APP_URL_API;
 const Register = () => {
 
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ const Register = () => {
     e.preventDefault();
     try {
       console.log(user);
-      const response = await fetch("http://localhost:3000/api/v1/new", {
+      const response = await fetch(`${API}/api/v1/new`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
