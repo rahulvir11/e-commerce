@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import AdminSidebar from "../../../Components/admin/AdminSidebar";
 import { useNavigate, useParams } from "react-router-dom";
 import UserContext from "../../../src/context/user/UserContex";
+const API= import.meta.env.VITE_APP_URL_API;
 const ProductManagement = () => {
   const { allProduct, setAllproduct, getAllproduct } = useContext(UserContext);
   useEffect(() => {
@@ -63,7 +64,7 @@ const ProductManagement = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1/admin/product/${id}`,
+        `${API}/api/v1/admin/product/${id}`,
         {
           method: "PUT",
           headers: {

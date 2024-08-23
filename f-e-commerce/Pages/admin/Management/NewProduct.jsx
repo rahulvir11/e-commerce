@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AdminSidebar from "../../../Components/admin/AdminSidebar";
-
+const API= import.meta.env.VITE_APP_URL_API;
 const NewProduct = () => {
  
   const [data, setdata] = useState({
@@ -61,7 +61,7 @@ const handlesubmit = async (e) => {
   e.preventDefault();
   try {
     console.log(data);
-    const response = await fetch('http://localhost:3000/api/v1/admin/product/new',{
+    const response = await fetch(`${API}/api/v1/admin/product/new`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
