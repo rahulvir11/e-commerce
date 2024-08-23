@@ -31,7 +31,7 @@ const Toss = () => {
             >
              <img
                   src={`${
-                       result === "Heads" ? "/head" : "/Tell"
+                       result === "Heads" ? "images/head.jpg" : "images/Tell.jpg"
                   }.jpg`}
                      alt={result}
                     className="size-24 "

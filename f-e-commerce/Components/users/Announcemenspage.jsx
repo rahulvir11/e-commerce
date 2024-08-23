@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { FastDelivery, FreeShipping, BestQuality } from "./Imagesvg";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -115,7 +115,7 @@ const Announcemenspage = () => {
   return (
     <div>
       <div ref={constainer} className=" w-full h-[40vh] md:h-[84vh] relative overflow-hidden " style={{
-        backgroundImage:"url(slider-bg.jpg)",
+        backgroundImage:"url(images/slider-bg.jpg)",
         backgroundPosition:"top",
         backgroundSize:"cover"
       }}>
