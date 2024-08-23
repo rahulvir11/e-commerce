@@ -25,8 +25,12 @@ const ProductManagement = () => {
     if (name === "image") {
       handleInputimg();
     }
+    if (name === "pStock" || name === "pPrice") {
+      value = parseInt(value);
+    }
     setdata({
       ...data,
+      
       [name]: value,
     });
   };
