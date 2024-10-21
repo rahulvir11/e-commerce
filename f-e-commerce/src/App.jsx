@@ -79,7 +79,7 @@ function App() {
                {/* Catch-all route */}
             <Route path="*" element={<Navigate to="/error" />} />
             </Routes>
-            <ToastContainer/>
+            <ToastContainer autoClose={1000}/>
           </Suspense>
          
         </Router>

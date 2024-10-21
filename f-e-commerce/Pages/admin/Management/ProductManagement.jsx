@@ -2,9 +2,10 @@ import React, { useEffect, useState, useContext } from "react";
 import AdminSidebar from "../../../Components/admin/AdminSidebar";
 import { useNavigate, useParams } from "react-router-dom";
 import UserContext from "../../../src/context/user/UserContex";
+import { toast } from "react-toastify";
 const API= import.meta.env.VITE_APP_URL_API;
 const ProductManagement = () => {
-  const { allProduct, setAllproduct, getAllproduct } = useContext(UserContext);
+  const { allProduct, setAllproduct, getAllproduct,User } = useContext(UserContext);
   useEffect(() => {
     if (allProduct.length === 0) {
       getAllproduct()
@@ -66,7 +67,11 @@ const ProductManagement = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
+    try {console.log(User.email);
+      if (User.email != 'rahulroy15032004mandal@gmail.com') {
+        toast.error('not allow')
+        return;
+      }
       const response = await fetch(
         `${API}/api/v1/admin/product/${id}`,
         {
@@ -80,7 +85,7 @@ const ProductManagement = () => {
 
       const res = await response.json();
       if (response.ok) {
-        alert(res.message);
+        toast.success(res.message);
         const indexToUpdate = allProduct.findIndex((obj) => obj._id === id);
         if (indexToUpdate !== -1) {
           allProduct[indexToUpdate] = {

@@ -7,8 +7,8 @@ const Login = () => {
   const {getUser,setToken}=useContext(UserContext);
   const navigate = useNavigate();
   const [user, setUser] = useState({
-    email: "",
-    password: ""
+    email: "admin@gmail.com",
+    password: "12345678"
   });
   const handleInput = (e) => {
     let name = e.target.name;

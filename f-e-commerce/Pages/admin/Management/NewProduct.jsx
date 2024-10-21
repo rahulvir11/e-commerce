@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import AdminSidebar from "../../../Components/admin/AdminSidebar";
+import UserContext from "../../../src/context/user/UserContex";
 const API= import.meta.env.VITE_APP_URL_API;
+import {toast} from 'react-toastify'
 const NewProduct = () => {
+  const { User}=useContext(UserContext);
  
   const [data, setdata] = useState({
     pName: "",
@@ -60,7 +63,10 @@ const handleInputimg = ()=>{
 const handlesubmit = async (e) => {
   e.preventDefault();
   try {
-    console.log(data);
+    if (User.email != 'rahulroy15032004mandal@gmail.com') {
+      toast.error('not allow')
+      return;
+    }
     const response = await fetch(`${API}/api/v1/admin/product/new`,{
       method:"POST",
       headers:{
@@ -70,8 +76,8 @@ const handlesubmit = async (e) => {
     });
 
     const res = await response.json();
-    console.log(res);
-    console.log(data);
+    // console.log(res);
+    // console.log(data);
 
     if(response.ok){
       alert("add product",res.pName);
@@ -83,7 +89,7 @@ const handlesubmit = async (e) => {
         image: "",
       })
     }else{
-      console.log(res.error)
+     toast.info(res.error)
     }
   } catch (error) {
     console.log("internal server error",error);

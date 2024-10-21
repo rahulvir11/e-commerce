@@ -159,8 +159,8 @@ const AdminSidebar = () => {
             }`}
           >
             <RiCoupon3Fill size=".9rem" />
-            <NavLink className="pl-2 pb-1" to={"/admin/app/coupon"}>
-              Coupon
+            <NavLink className="pl-2 pb-1" to={"/profile"}>
+              profile
             </NavLink>
           </li>
           <li
